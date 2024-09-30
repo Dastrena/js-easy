@@ -1,8 +1,19 @@
 // Задача: Написати функцію, яка приймає рядок і замінює всі голосні (a, e, i, o, u) 
 // на певний символ, наприклад *.
 
-function replaceVowels(str) {
-  // Ваш код тут
+
+  function replaceVowels(str) {
+    const vowels = "aeiouAEIOU";
+    let result = '';
+    for (let i = 0; i < str.length; i++) {
+        // Якщо символ є голосною, замінюємо його на '*'
+        if (vowels.includes(str[i])) {
+            result += '*';
+        } else {
+            result += str[i];
+        }
+    }
+    return result;
 }
 
 console.log(replaceVowels("hello world")); // Виведе: "h*ll* w*rld"
